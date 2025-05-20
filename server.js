@@ -1,1 +1,2 @@
-console.log("hello");
+const x = "new file";
+console.log(x);
