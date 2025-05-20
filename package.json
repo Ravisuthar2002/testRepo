@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-     "test": "jest"
+    "start": "node server.js"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }
