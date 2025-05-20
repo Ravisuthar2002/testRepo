@@ -3,10 +3,10 @@ name: Node.js CI/CD Pipeline
 on:
   push:
     branches:
-      - main
+      - ravi_dev
   pull_request:
     branches:
-      - main
+      - ravi_dev
 
 jobs:
   build-and-deploy:
