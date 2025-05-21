@@ -31,8 +31,4 @@ jobs:
         run: npm run build || echo "No build script found"
 
       - name: 🚀 Deploy to Render
-        run: |
-          if [ -z "${{ secrets.RENDER_DEPLOY_HOOK_URL }}" ]; then
-            echo "Missing RENDER_DEPLOY_HOOK_URL secret" && exit 1
-          fi
-          curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+        run:  curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
