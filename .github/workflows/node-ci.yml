@@ -30,5 +30,6 @@ jobs:
       - name: 🏗️ Build (Optional)
         run: npm run build || echo "No build script found"
 
-      - name: 🚀 Deploy to Render
-        run: curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+      - name: Trigger Render Deploy
+        run: |
+          curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
