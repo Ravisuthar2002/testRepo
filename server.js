@@ -1,2 +1,2 @@
-const x = "New contant for my new pipline ::::";
+const x = "Project is new contant for testing :::::::::::::::::::::::::::::::::::::::::::::::::::::";
 console.log(x);
