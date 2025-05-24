@@ -80,5 +80,6 @@ jobs:
       - name: 🚀 Trigger Render Deploy Hook
         if: success() 
         run: |
-          curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+               echo "My secret value is: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}"
+               # The secret value will be redacted in the log output
 
