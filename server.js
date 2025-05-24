@@ -1,2 +1,2 @@
-const x = "that is new Project devolp:::::::::::::";
+const x = "Hello, World!";
 console.log(x);
