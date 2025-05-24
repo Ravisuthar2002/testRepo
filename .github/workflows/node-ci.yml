@@ -32,9 +32,5 @@ jobs:
 
       - name: Trigger Render Deploy
         run: |
-         if [ -z "${{ secrets.RENDER_DEPLOY_HOOK_URL }}" ]; then
-           echo "Secret not set!";
-           exit 1;
-         else
-         echo "Secret loaded.";
-               fi
+              echo "My secret value is: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}"
+              # The secret value will be redacted in the log output
