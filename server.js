@@ -1,2 +1,2 @@
-const x = "Project is new contant for testing :::::::::::::::::::::::::::::::::::::::::::::::::::::";
+const x = "Last push my code on git Project";
 console.log(x);
