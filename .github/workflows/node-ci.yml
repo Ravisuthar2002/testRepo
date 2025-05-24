@@ -1,36 +1,50 @@
-name: Node.js CI/CD Pipeline
+# name: Node.js CI/CD Pipeline
+
+# on:
+#   push:
+#     branches:
+#       - ravi_dev
+#   pull_request:
+#     branches:
+#       - ravi_dev
+
+# jobs:
+#   build-and-deploy:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: 🛒 Checkout Code
+#         uses: actions/checkout@v3
+
+#       - name: 🔧 Setup Node.js
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: '18'
+
+#       - name: 📦 Install Dependencies
+#         run: npm install
+
+#       - name: 🧪 Run Tests
+#         run: npm test
+
+#       - name: 🏗️ Build (Optional)
+#         run: npm run build || echo "No build script found"
+
+#       - name: Trigger Render Deploy
+#         run: |
+#               echo "My secret value is: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}"
+#               # The secret value will be redacted in the log output
+
+
+name: Deploy Only
 
 on:
   push:
     branches:
       - ravi_dev
-  pull_request:
-    branches:
-      - ravi_dev
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: 🛒 Checkout Code
-        uses: actions/checkout@v3
-
-      - name: 🔧 Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-
-      - name: 📦 Install Dependencies
-        run: npm install
-
-      - name: 🧪 Run Tests
-        run: npm test
-
-      - name: 🏗️ Build (Optional)
-        run: npm run build || echo "No build script found"
-
-      - name: Trigger Render Deploy
-        run: |
-              echo "My secret value is: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}"
-              # The secret value will be redacted in the log output
+      - run: curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
