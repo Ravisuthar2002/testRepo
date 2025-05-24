@@ -47,4 +47,5 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - run: curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+      - run: |
+          echo "My secret value is: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}"
