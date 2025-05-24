@@ -32,4 +32,9 @@ jobs:
 
       - name: Trigger Render Deploy
         run: |
-          curl -X POST ${{ 'https://api.render.com/deploy/srv-d0onaiumcj7s73dbpl4g?key=QXlJ3ZRRfIE' }}
+         if [ -z "${{ secrets.RENDER_DEPLOY_HOOK_URL }}" ]; then
+           echo "Secret not set!";
+           exit 1;
+         else
+         echo "Secret loaded.";
+               fi
